@@ -1,6 +1,6 @@
 # Housou
 
-Housou is a script the scrapes the NHK news home page and analysis word frequency of a selection of main articles.
+Housou is a script the scrapes the NHK news home page and analyses word frequency of a selection of main articles.
 
 Ideally this script would be left running, checking the site periodically and adding any new article. At the moment I am periodically running it manually.
 
@@ -8,7 +8,6 @@ Ideally this script would be left running, checking the site periodically and ad
 
 - lxml
 - selenium
-- pandas
 - MeCab with mecab-ipadic-neologd
 
 For selenium to work, [chromedriver](http://chromedriver.chromium.org/downloads) needs to be downloaded and added to root folder.
