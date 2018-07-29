@@ -33,28 +33,38 @@ tree = html.fromstring(innerHTML)
 links = tree.xpath(link_path)
 print('🔓 Extracted!')
 
+titles = []
+with open('articles.csv','r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        titles.append(row[0])
+
 # scape linked article pages
 for link in links:
-
     driver.get(root_url + link)
     innerHTML = driver.execute_script('return document.body.innerHTML')
     tree = html.fromstring(innerHTML)
     # Get content
-    content = tree.xpath(content_path)[0].text_content()
     title = tree.xpath(title_path)[0]
-    date = tree.xpath(date_path)[0]
-    # echo content to command line
-    print(f'リンク :: {link}')
-    print(f'     題名 :: {title}')
-    print(f'     日付 :: {date}')
-    print(f'     内容 :: {content[0:20]}...')
-    # Add to entries csv
-    entry = [
-        title,
-        date,
-        content]
-    with open('articles.csv','a') as file:
-        wr = csv.writer(file)
-        wr.writerow(entry)
+    if title in titles:
+        print(f'💀 duplicate article :: {title}')
+        print('     skipped!')
+        pass
+    else:
+        content = tree.xpath(content_path)[0].text_content()
+        date = tree.xpath(date_path)[0]
+        # echo content to command line
+        print(f'リンク :: {link}')
+        print(f'     題名 :: {title}')
+        print(f'     日付 :: {date}')
+        print(f'     内容 :: {content[0:20]}...')
+        # Add to entries csv
+        entry = [
+            title,
+            date,
+            content]
+        with open('articles.csv','a') as file:
+            wr = csv.writer(file)
+            wr.writerow(entry)
 
 driver.quit()
