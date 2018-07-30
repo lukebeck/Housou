@@ -47,8 +47,8 @@ for link in links:
     # Get content
     title = tree.xpath(title_path)[0]
     if title in titles:
-        print(f'💀 duplicate article :: {title}')
-        print('     skipped!')
+        print(f'㊢ 複写の記事 :: {title}')
+        print('     記事を飛びました')
         pass
     else:
         content = tree.xpath(content_path)[0].text_content()
