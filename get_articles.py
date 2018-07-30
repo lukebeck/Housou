@@ -15,11 +15,11 @@ chrome_options.add_argument('--disable-extensions')
 chrome_driver = os.getcwd() + '/chromedriver'
 
 #Urls
-url = 'https://www3.nhk.or.jp/news/'
+url = 'https://www3.nhk.or.jp/news/catnew.html?utm_int=news_contents_news-main_more'
 root_url = 'https://www3.nhk.or.jp/'
 
 # Xpaths
-link_path = '//article[@class="module module--news-main index-main"]//dt/a/@href'
+link_path = '//div[@class="content--items"]/ul/li/a/@href'
 content_path = '//section[@class="content--detail-main"]'
 title_path = '//h1[@class="content--title"]/text()'
 date_path = '//p[@class="content--date"]/time/text()'
