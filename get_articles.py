@@ -2,7 +2,6 @@ import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
-import lxml
 import requests
 from lxml import html
 
