@@ -1,0 +1,3 @@
+include README.md
+include housou/chromedriver
+include housou/articles.csv

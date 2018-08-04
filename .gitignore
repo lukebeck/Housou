@@ -1,5 +1,16 @@
+# python
+__pycache__
+*.pyc
+/dist/
+*.egg-info
+
+# vscode
 .vscode
-.DS_Store
+
+# OS
+*.DS_Store
+
+# Housou
 chromedriver
-articles.csv
 housou-data
+articles.csv

@@ -2,12 +2,19 @@
 
 Housou is a script the scrapes the NHK news home page and analyses word frequency of a selection of main articles.
 
-The data is collected at [housou-data](https://github.com/lukebeck/housou-data)
+The data is collected at [housou-data](https://github.com/lukebeck/housou-data).
 
-## 🔊 Requires
+## 🔊 Requirements
+
+### Python packages
 
 - lxml
+- mecab-python3
 - selenium
-- MeCab with mecab-ipadic-neologd
 
-For selenium to work, [chromedriver](http://chromedriver.chromium.org/downloads) needs to be downloaded and added to root folder.
+### Other requirements
+
+- MeCab with mecab-ipadic-neologd
+- [chromedriver](http://chromedriver.chromium.org/downloads)
+    - Required for selenium.
+    - Download and add to root folder.
