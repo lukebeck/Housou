@@ -5,4 +5,4 @@ def main():
     get_articles.housou()
 
 def analyse():
-    get_words.analyse()
+    get_words.main()

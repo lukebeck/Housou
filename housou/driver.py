@@ -13,6 +13,7 @@ class Driver:
         self.driver = webdriver.Chrome(
             chrome_options=self.options,
             executable_path=self.path)
+        print('driver initialised')
 
     def setOptions(self):
         '''Return options for headless chrome driver'''
